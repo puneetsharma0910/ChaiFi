@@ -25,4 +25,8 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main
