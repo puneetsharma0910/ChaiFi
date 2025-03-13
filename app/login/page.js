@@ -5,20 +5,15 @@ import { useRouter } from 'next/navigation'
 
 const Login = () => {
   const { data: session } = useSession()
-  if (!session) {
-    const router = useRouter()
-    router.push('/login')
-  }
+  const router = useRouter()
 
-
-  // useEffect(() => {
-  //   // document.title = "Login - Get Me A Chai" 
-  //   // console.log(session)
-  //   if (session) {
-  //     const router = useRouter()
-  //     router.push('dashboard')
-  //   }
-  // }, [])
+  useEffect(() => {
+    document.title = "Login - Get Me A Chai" 
+    console.log(session)
+    if (session) {
+      router.push('/dashboard')
+    }
+  }, [])
 
   return (
     <div className='text-white py-14 container mx-auto'>
