@@ -7,13 +7,22 @@ const Login = () => {
   const { data: session } = useSession()
   const router = useRouter()
 
+  // useEffect(() => {
+  //   document.title = "Login - Get Me A Chai" 
+  //   console.log(session)
+  //   if (session) {
+  //     router.push('/dashboard')
+  //   }
+  // }, [])
   useEffect(() => {
-    document.title = "Login - Get Me A Chai" 
-    console.log(session)
+    document.title = "Login - Get Me A Chai";  
+    console.log("Session:", session);
+  
     if (session) {
-      router.push('/dashboard')
+      router.push("/dashboard");
     }
-  }, [])
+  }, [session]); // ✅ Add session as a dependency
+  
 
   return (
     <div className='text-white py-14 container mx-auto'>
